@@ -17,9 +17,9 @@ class IBDataApp(EWrapper, EClient):
         'tickType', 'ImpliedVolatility', 'Delta', 'OptionPrice',                                                    
         'pvDividend', 'Gamma', 'Vega', 'Theta', 
         'UnderlyingPrice'])
-
+        print("A")
         self.connect(host=host, port=port, clientId=clientId)
-
+        print("B")
         thread = Thread(target=self.run)
         thread.start()
         setattr(self, "_thread", thread)
@@ -40,13 +40,13 @@ class IBDataApp(EWrapper, EClient):
 
 if __name__ == "__main__":
     print(" BEGIN ")
-    app = IBDataApp("localhost", 7497, 0)
+    app = IBDataApp("localhost", 7497, 2)
     # app.connect("127.0.0.1", 7497, 0)
     time.sleep(2)
     print (" - APP CONNECTED ")
     # --- CONTRACT DEFINITION -----
     contract = Contract()
-    contract.symbol = "AAPL"
+    contract.symbol = "DIS"
     contract.secType = "OPT" #OPT = OPTION 
     contract.currency = "USD"
     contract.exchange = "BOX"

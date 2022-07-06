@@ -11,6 +11,7 @@ import datetime
 
 class IBDataApp(EWrapper, EClient):
     def __init__(self, host, port, clientId):
+        EWrapper.__init__(self)
         EClient.__init__(self, self)
 
         self.tods = pd.DataFrame([], columns=['TickerId', 
@@ -40,28 +41,28 @@ class IBDataApp(EWrapper, EClient):
 
 if __name__ == "__main__":
     print(" BEGIN ")
-    app = IBDataApp("localhost", 7497, 2)
+    app = IBDataApp("localhost", 7496, 7)
     # app.connect("127.0.0.1", 7497, 0)
     time.sleep(2)
     print (" - APP CONNECTED ")
     # --- CONTRACT DEFINITION -----
     contract = Contract()
-    contract.symbol = "DIS"
+    contract.symbol = "BA"
     contract.secType = "OPT" #OPT = OPTION 
     contract.currency = "USD"
-    contract.exchange = "BOX"
-    contract.lastTradeDateOrContractMonth = "20191101"  # June 2020
-    contract.strike = 126
+    contract.exchange = "SMART"
+    contract.lastTradeDateOrContractMonth = "20200225"  # June 2020
+    contract.strike = 150
     contract.right = "P"
     contract.multiplier = "100"
     print (" -- CONTRACT ESTALBLISHED ")
     app.reqMktData(1001, contract, "", False, False, [])
     app.tickSnapshotEnd(1001)
-    app.run()
     print (" --- DATA RETRIEVED, APP RUNNING")
     ds = app.tods
     ds.to_csv("desiredoptions.csv")
     print(ds)
+    app.run()
     app.disconnect()
 
     # df = app.data_to_dataframe()

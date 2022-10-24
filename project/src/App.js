@@ -40,33 +40,35 @@ function App() {
           </tr>
           <tr>
             <td> P1 </td>
-            <td> <input type = "number" value = /> </td>
-            <td> <input type = "number" value = /> </td>
-            <td> <input type = "number" value = /> </td>
-            <td> <input type = "number" value = /> </td>
+            <td> <input type = "number" value = "0.12"/> </td>
+            <td> <input type = "number" value = "0.20"/> </td>
+            <td> <input type = "number" value = "90"/> </td>
+            <td> <input type = "number" value = "130"/> </td>
           </tr>
           <tr>
             <td> P2 </td>
-            <td> <input type = "number" value = /> </td>
-            <td> <input type = "number" value = /> </td>
-            <td> <input type = "number" value = /> </td>
-            <td> <input type = "number" value = /> </td>
+            <td> <input type = "number" value = "0.22"/> </td>
+            <td> <input type = "number" value = "0.27"/> </td>
+            <td> <input type = "number" value = "40"/> </td>
+            <td> <input type = "number" value = "50"/> </td>
           </tr>
           <tr>
             <td> C3 </td>
-            <td> <input type = "number" value = /> </td>
-            <td> <input type = "number" value = /> </td>
-            <td> <input type = "number" value = /> </td>
-            <td> <input type = "number" value = /> </td>
+            <td> <input type = "number" value = "0.22"/> </td>
+            <td> <input type = "number" value = "0.27"/> </td>
+            <td> <input type = "number" value = "40"/> </td>
+            <td> <input type = "number" value = "50"/> </td>
           </tr>
           <tr>
             <td> C4 </td>
-            <td> <input type = "number" value = /> </td>
-            <td> <input type = "number" value = /> </td>
-            <td> <input type = "number" value = /> </td>
-            <td> <input type = "number" value = /> </td>
+            <td> <input type = "number" value = "0.12"/> </td>
+            <td> <input type = "number" value = "0.18"/> </td>
+            <td> <input type = "number" value = "90"/> </td>
+            <td> <input type = "number" value = "130"/> </td>
           </tr>
         </table>
+
+        <button> SUBMIT </button>
 
         {/* new line start*/}
         <p>To get your profile details: </p><button onClick={getData}>Click me</button>
